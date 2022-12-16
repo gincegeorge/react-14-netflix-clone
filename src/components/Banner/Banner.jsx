@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Banner.css";
 import axios, { all } from "axios";
-import { API_KEY, baseURL, imageUrl } from "../constants/constants";
+import { API_KEY, baseURL, imageUrl } from "../../constants/constants";
 
 const Banner = () => {
   const [movie, setMovie] = useState();
@@ -11,7 +11,6 @@ const Banner = () => {
       .get(`${baseURL}/trending/all/week?api_key=${API_KEY}&language=en-US`)
       .then((responce) => {
         setMovie(responce.data.results[randomNumer]);
-        console.log(responce.data.results[randomNumer]);
       });
   }, []);
 
